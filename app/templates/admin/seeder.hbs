@@ -1,0 +1,33 @@
+<h1>Seeder, or Data Center</h1>
+<div class="row">
+	<div class="col-md-4">
+	{{number-box title='Libraries' number=libraries.length}}
+	</div>
+	<div class="col-md-4">
+		{{number-box title='Authors' number=authors.length}}
+	</div>
+	<div class="col-md-4">
+		{{number-box title='Books' number=books.length}}
+	</div>
+</div>
+
+{{!-- Seeder for Libraries --}}
+{{seeder-block
+	sectionTitle='Libraries'
+	counter=librariesCounter
+	generateAction='generateLibraries'
+	deleteaction='deleteLibraries'
+	createReady=libDone
+	deleteDeady=libDelDone
+}}
+
+
+{{!-- Seeder for Authors and Books --}}
+{{seeder-block
+	sectiontitle='Authors'
+	counter=authorsCounter
+	generateAction='generateBooksAndAuthors'
+	deleteAction='deleteBooksAndAuthors'
+	createReady=authDone
+	deleteReady=authDelDone
+}}

@@ -1,0 +1,25 @@
+{{!-- <h1>This is the HomePage Index Aswell</h1> --}}
+<div class="jumbotron text-center">
+    <h1>Coming Soon</h1>
+
+    <br/><br/>
+
+    <p>Don't miss our launch date, request an invitation now.</p>
+    {{#if responseMessage}}
+        <div class="alert alert-success">
+        Your email was sent:
+        Email: {{model.email}}
+        </div>
+    {{else}}
+    <div class="form-horizontal form-group form-group-lg row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+        	{{input type="email" value=model.email class="form-control" placeholder="PLease type your e-mail address" autofocus="autofocus"}}
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+            <button class="btn btn-primary btn-lg btn-block" disabled={{model.isDisabled}} {{action 'saveInvitation' model}}>Request invitation</button>
+        </div>
+
+    </div>
+    {{/if}}
+    <br/><br/>
+</div>

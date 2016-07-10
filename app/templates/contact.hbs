@@ -1,0 +1,13 @@
+<h1>This is the ContactPage</h1>
+{{#if responseMessage}}
+<div class="alert alert-success">
+Your message was sent:
+Email: {{model.email}}
+Message: {{model.message}}
+ID: {{model.id}}
+</div>
+{{else}}
+{{input type='email' class='form-control' value=model.email autofocus="autofocus" placeholder="Your Email. (needs to be valid)"}}
+{{textarea class='form-control' value=model.message placeholder="Your message. (At least 6 characters.)"}}
+<button class="btn btn-primary btn-lg btn-block" disabled={{model.isNotValid}} {{action 'submitMessage' model}}>Submit</button>
+{{/if}}
